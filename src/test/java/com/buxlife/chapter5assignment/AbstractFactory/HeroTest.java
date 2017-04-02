@@ -1,5 +1,6 @@
 package com.buxlife.chapter5assignment.AbstractFactory;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,10 +11,15 @@ import static org.junit.Assert.*;
 public class HeroTest {
     @Test
     public void heroDescription() throws Exception {
+        Knight knight = new Knight();
+        knight.heroDescription();
     }
 
     @Test
     public void attack() throws Exception {
+        Knight knight = new Knight();
+        knight.attack();
+        Assert.assertEquals(knight.attack(), 20, 0);
     }
 
 }
