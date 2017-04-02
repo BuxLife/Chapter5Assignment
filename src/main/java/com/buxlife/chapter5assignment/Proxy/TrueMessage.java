@@ -5,11 +5,16 @@ package com.buxlife.chapter5assignment.Proxy;
  */
 public class TrueMessage implements Message {
 
-    public String
-    public TrueMessage(String message){
+    public String message;
 
+    public TrueMessage(String message){
+        this.message = message;
     }
     public void showMessage() {
-
+        System.out.println("Message Details: " + message);
     }
+
+
+
 }
+

@@ -5,17 +5,23 @@ package com.buxlife.chapter5assignment.Proxy;
  */
 public class MessageProxy implements Message {
 
+    private TrueMessage realMessage;
+
     private String message;
-    private String proxyMessage;
 
     public MessageProxy(String msg){
         this.message = msg;
     }
     public void showMessage() {
 
-        //Create & Show Message only when it is required.
-        proxyMessage = new String(message);
-        System.out.println(proxyMessage.toString());
+        if (realMessage == null) {
+            //Create & Show Message only when it is required.
+            realMessage = new TrueMessage(message);
+        }
+        realMessage.showMessage();
+    }
 
+    public String toString(){
+        return message;
     }
 }
