@@ -7,20 +7,22 @@ import java.util.List;
  */
 public class SumVisitor implements RideVisitor{
 
+    private double visitEarnings;
+
     public void visit(Slide slide) {
-        double visitEarnings = slide.getNumVisits() * slide.getPrice();
+        visitEarnings = slide.getNumVisits() * slide.getPrice();
         System.out.println("Ride Details:\nSlide\nNumber of Visitors: " + slide.getNumVisits());
         System.out.println("Daily Earnings: R" + visitEarnings);
     }
 
     public void visit(FerrisWheel ferrisWheel) {
-        double visitEarnings = ferrisWheel.getNumVisits() * ferrisWheel.getPrice();
+        visitEarnings = ferrisWheel.getNumVisits() * ferrisWheel.getPrice();
         System.out.println("Ride Details:\nFerris Wheel\nNumber of Visitors: " + ferrisWheel.getNumVisits());
         System.out.println("Daily Earnings: R" + visitEarnings);
     }
 
     public void visit(RollerCoaster rollerCoaster) {
-        double visitEarnings = rollerCoaster.getNumVisits() * rollerCoaster.getPrice();
+        visitEarnings = rollerCoaster.getNumVisits() * rollerCoaster.getPrice();
         System.out.println("Ride Details:\nRoller Coaster\nNumber of Visitors: " + rollerCoaster.getNumVisits());
         System.out.println("Daily Earnings: R" + visitEarnings);
     }
@@ -29,5 +31,9 @@ public class SumVisitor implements RideVisitor{
         for (RideElement ride: elementList){
             ride.accept(this);
         }
+    }
+
+    public double getVisitEarnings() {
+        return visitEarnings;
     }
 }

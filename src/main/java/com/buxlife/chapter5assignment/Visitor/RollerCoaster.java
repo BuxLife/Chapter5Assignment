@@ -3,7 +3,7 @@ package com.buxlife.chapter5assignment.Visitor;
 /**
  * Created by Bux_Life on 2017/04/02.
  */
-public class RollerCoaster {
+public class RollerCoaster implements RideElement{
 
 
     int numVisits;
