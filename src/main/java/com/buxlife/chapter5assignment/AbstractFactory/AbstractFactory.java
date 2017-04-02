@@ -1,5 +1,8 @@
 package com.buxlife.chapter5assignment.AbstractFactory;
-
+/*
+    Author: Naeem Bux       Filename: AbstractFactory.java
+    File Description:       A class implementing the Abstract Factory Design Pattern, a Creational Pattern.
+ */
 public class AbstractFactory{
     public HeroFactory getHeroFactory(String type){
 
